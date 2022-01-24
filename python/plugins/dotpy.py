@@ -52,7 +52,7 @@ class Source (object) :
                 'udTime' : self.now,
             }
             self.addData(data)
-            self.T.logger('正在分析[ %s ]: %s' % (str(info['id']) + str(info['title']), url))
+            self.T.logger('正在分析 id: %s title: %s url: %s delay: %s' % (str(info['id']), str(info['title']), url, str(netstat)))
         else :
             pass # MAYBE later :P
 

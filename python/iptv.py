@@ -41,7 +41,7 @@ class Iptv (object):
         self.T.logger("正在生成m3u8文件")
 
         sql = """SELECT * FROM
-            (SELECT * FROM %s WHERE online = 1 ORDER BY delay DESC) AS delay
+            (SELECT * FROM %s WHERE online = 1 ORDER BY delay ASC) AS delay
             GROUP BY LOWER(delay.title)
             HAVING delay.title != '' and delay.title != 'CCTV-' AND delay.delay < 500
             ORDER BY level ASC, length(title) ASC, title ASC
