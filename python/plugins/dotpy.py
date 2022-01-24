@@ -34,6 +34,8 @@ class Source (object) :
             #     t.join()
 
     def detectData (self, title, url) :
+        if 'Max16M' in title or '12M1080' in title or '14M1080' in title:
+            return
         print('detectData', title, url)
         info = self.T.fmtTitle(title)
 
